@@ -4,7 +4,7 @@
 
 * `fs`文件系统模块——`fs`模块是nodejs专门负责操作文件的模块，全称FileSystem。[具体API请查看](http://nodeapi.ucdok.com/#/api/fs.html)
 * `stream`流——`流`是一个比较抽象的概念，在`nodejs`很多地方都有流的实现。它分为`可读流`，`可写流`，`可读可写流`。比如一个`TCP连接`既是可读流，又是可写流，而Http连接则不同，一个`http request`对象是可读流，而`http response`对象则是可写流。这里初期不对`流`做过多的阐述。[具体API请查看](http://nodeapi.ucdok.com/#/api/stream.html)
-* `process`进程——本章节不过多涉及，只是利用这个全局对象取命令行参数[具体API请查看](http://nodeapi.ucdok.com/#/api/process.html)
+* `process`进程——本章节不过多涉及，只是利用这个全局对象取命令行参数。[具体API请查看](http://nodeapi.ucdok.com/#/api/process.html)
 
 ## 本章节目标
 
