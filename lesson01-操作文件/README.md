@@ -1,14 +1,16 @@
-### 本章节涉及知识点
+# lesson01-操作文件
+
+## 本章节涉及知识点
 
 * `fs`文件系统模块——`fs`模块是nodejs专门负责操作文件的模块，全称FileSystem。[具体API请查看](http://nodeapi.ucdok.com/#/api/fs.html)
 * `stream`流——`流`是一个比较抽象的概念，在`nodejs`很多地方都有流的实现。它分为`可读流`，`可写流`，`可读可写流`。比如一个`TCP连接`既是可读流，又是可写流，而Http连接则不同，一个`http request`对象是可读流，而`http response`对象则是可写流。这里初期不对`流`做过多的阐述。[具体API请查看](http://nodeapi.ucdok.com/#/api/stream.html)
-* `process`进程——本章节不过多涉及，只是利用这个全局对象取命令行参数
+* `process`进程——本章节不过多涉及，只是利用这个全局对象取命令行参数[具体API请查看](http://nodeapi.ucdok.com/#/api/process.html)
 
-### 本章节目标
+## 本章节目标
 
 拷贝文件
 
-### 实现过程
+## 实现过程
 
 #### 引入模块
 
@@ -173,7 +175,7 @@ $ node app.js ./a.zip ./b.zip
 
 **以上内容很大程度上参考了[`昔我往矣，杨柳依依。`的一篇文章](https://segmentfault.com/a/1190000000519006)，大家可以自己去看看。**
 
-### pipe
+## pipe
 
 以上我们使用了事件的方式来编写了拷贝的方法，当然，nodejs流还有一个方法`pipe`能够更加简洁地实现以上功能。我们将代码改写如下：
 ```javascript
@@ -201,10 +203,11 @@ readStream.on('end', function() {
 [stream-handbook 英文版](https://github.com/stop2stare/stream-handbook)
 
 
-### TODO
+## TODO
 
 本章节简要陈述了`流`，在后面的章节也许会继续讲述。
 
 
 
+[lesson02-网络](../lesson02-网络/README.md)
 
