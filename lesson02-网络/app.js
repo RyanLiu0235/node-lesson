@@ -1,9 +1,6 @@
 var server = require('http').createServer(),
 	fs = require('fs'),
 	path = require('path');
-server.on('connection', function(socket) {
-	console.log(socket)
-})
 
 server.on('request', function(req, res) {
 	var _url = path.normalize('.' + req.url);
