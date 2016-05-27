@@ -17,15 +17,15 @@
 
 首先下载
 
+```
+$ npm init
+```
+
 **一点题外话**
 
 本节开始，我们要通过`npm`下载一些东西了，所以`npm`大家一定要会用了。在`package.json`里面的一些字段大家看着名字应该也能猜出来他们是什么意思了。
 
 **回归正题**
-
-```
-$ npm init
-```
 
 然后我们要安装`connect`，
 
@@ -107,6 +107,61 @@ app.listen(3100);
 ```
 
 好了。这里我就不过多介绍如何发起一个post请求了。大家可以试试Postman或者自己另外在一个网页上使用ajax发起一个post，看看返回的是hello world还是you\'re not allowed to visit。
+
+其实我们常常会对一个请求安排多个中间件来处理，主要是因为我们希望将中间件的处理逻辑模块化，每个中间件只做一件事情，比如有的中间件只处理session相关的事情，有的中间件只做验证登录，有的中间件则只是处理请求里的一些字段。这样分工明确，保证一个中间只做并做好一件事，中间件之间没有或者少有耦合，这是中间件的一个非常大的特点。
+
+nodejs拥有相当大的自带的或者第三方的依赖包——其实也就是一个中间件。他们有的非常非常小，实现的功能在你看来也许根本不值一提，但是却有很多大型的第三方的依赖包在互相使用这些最最基本的依赖包。
+
+以下是一个叫`bodyParser`的包：
+
+```javascript
+var multipart = require('./multipart')
+  , urlencoded = require('./urlencoded')
+  , json = require('./json');
+
+exports = module.exports = function bodyParser(options){
+  var _urlencoded = urlencoded(options)
+    , _multipart = multipart(options)
+    , _json = json(options);
+
+  return function bodyParser(req, res, next) {
+    _json(req, res, function(err){
+      if (err) return next(err);
+      _urlencoded(req, res, function(err){
+        if (err) return next(err);
+        _multipart(req, res, next);
+      });
+    });
+  }
+};
+
+```
+它返回的是一个方法`bodyParser`，这个方法接受了三个参数。我们应该能够看出来，它其实也是一个中间件，所以我们引用它的时候也大概能够猜出来怎么用。
+```javascript
+var bodyParser = require('body-parser'),
+	app = require('connect')();
+
+app.use(bodyParser());
+```
+其实差不多就是以上这样了。大家可以多去看看一些其他的第三方依赖包，比如[connect-flash](https://github.com/jaredhanson/connect-flash/blob/master/lib/flash.js)，[cookie-parser](https://github.com/expressjs/cookie-parser/blob/master/index.js)。
+
+当然，不是说要大家去看他的功能是如何实现的，而是去看他的代码结构。
+
+很多这样的第三方插件的主文件结构一般就是：
+
+```javascript
+module.exports = someModule;
+
+someModule = function(arg) {
+	return function someModule (req, res, next) {
+		// 这里是一些代码...
+
+		next();
+	}
+}
+```
+
+中间在`someModule`里返回的那个方法就是一个中间件的结构。
 
 想必大家对`中间件`的概念稍微有了一点了解。本节我们利用`connect`搭建了一个服务器，监听3100端口。并且做了三个中间件，分别处理请求'/index'，'/user'。同时，我们也理解了中间件的几个参数的意义。`req`是包含请求信息的一个可读流，`res`是包含响应信息的可写流，`next`是代表将请求继续往下传的方法。如果一个中间件的最后调用了`next()`，那说明这个请求还得继续往下找符合条件的中间件来处理它。
 
