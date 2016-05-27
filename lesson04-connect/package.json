@@ -1,0 +1,14 @@
+{
+  "name": "lesson04-connect",
+  "version": "1.0.0",
+  "description": "利用connect编写一个简单的网站",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "liucheng",
+  "license": "MIT",
+  "dependencies": {
+    "connect": "^3.4.1"
+  }
+}
