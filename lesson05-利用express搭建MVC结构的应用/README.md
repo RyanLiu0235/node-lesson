@@ -15,10 +15,10 @@
 不过这里我们直接安装`express 生成器`，他可以帮我们很快地构建一个express应用的基本框架
 
 ```
-$ npm install express-generator -g
+$ sudo npm install express-generator -g
 ```
 
-如此，我们全局安装了`express 生成器`，接下来，我们利用这个工具来生成一个express应用：
+如此，我们全局安装了`express 生成器`。注意，当我们要全局安装某一个东西的时候，最好使用sudo，因为会涉及到某些路径的写入权限。接下来，我们利用这个工具来生成一个express应用：
 
 ```
 $ express myapp
@@ -142,15 +142,10 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    // block content
-
-		// extends layout
-
-		// block content
 	  h1= title
 	  p Welcome to #{title}
 ```
-这里我注释掉的是jade模板的引用部分，我索性直接将完整的页面写了出来，方便讲解。
+我索性直接将完整的页面写了出来，方便讲解。
 
 这里我希望大家先去看看[jade模板引擎的API](http://jade-lang.com/reference/)。我们可以看到这里有三个地方出现了`title`这个变量，而我们渲染的数据里面就有`title`这个字段。所以这样页面就渲染出来了。
 

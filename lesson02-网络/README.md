@@ -59,7 +59,7 @@ server is listening on port 3100
 想必大家学习到现在也体会到了，每次修改app.js都必须重启服务器才能生效。这里建议大家全局安装一个node_module，`nodemon`，这个可以自动监测文件的修改并自动重启服务器，省去了我们很多麻烦。
 
 ```
-$ npm install -g nodemon
+$ sudo npm install -g nodemon
 ```
 这以后我们的命令就变成了
 ```
