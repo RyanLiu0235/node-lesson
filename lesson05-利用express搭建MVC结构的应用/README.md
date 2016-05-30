@@ -137,19 +137,21 @@ OK，我们再来看看`/views/index.jade`文件：
 
 ```jade
 doctype html
-html
+  html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-	  h1= title
-	  p Welcome to #{title}
+    h1= title
+    p Welcome to #{title}
 ```
 我索性直接将完整的页面写了出来，方便讲解。
 
 这里我希望大家先去看看[jade模板引擎的API](http://jade-lang.com/reference/)。我们可以看到这里有三个地方出现了`title`这个变量，而我们渲染的数据里面就有`title`这个字段。所以这样页面就渲染出来了。
 
 至此，从请求的分配，到请求的处理（中间包含了很多地方，这里不多作展开），到模板的渲染，我们就基本上完成了一整个请求的周期。
+
+如果你想详细了解如何利用express搭建一个MVC应用，比如说一个个人博客，建议你去参考这个项目，[N-blog](https://github.com/nswbmw/N-blog)，它在[wiki](https://github.com/nswbmw/N-blog/wiki)里详细讲解了搭建一个网站的各方面知识。
 
 ## TODO 
 
