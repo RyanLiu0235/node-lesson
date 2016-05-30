@@ -1,0 +1,17 @@
+{
+  "name": "lesson06",
+  "version": "1.0.0",
+  "description": "## 本章节涉及知识点",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "connect": "^3.4.1",
+    "minimist": "^1.2.0",
+    "serve-index": "^1.7.3",
+    "serve-static": "^1.10.2"
+  }
+}
