@@ -186,7 +186,7 @@ if (argv.help) {
 // 获取本机IP地址
 function getIpAddress() {
     var info = os.networkInterfaces();
-    var address;
+    var address, dev;
     for (dev in info) {
         info[dev].forEach(function(i, v) {
             if (!!i.family && i.family === 'IPv4' && !i.internal) {
@@ -253,7 +253,7 @@ if (argv.help) {
 // 获取本机IP地址
 function getIpAddress() {
     var info = os.networkInterfaces();
-    var address;
+    var address, dev;
     for (dev in info) {
         info[dev].forEach(function(i, v) {
             if (!!i.family && i.family === 'IPv4' && !i.internal) {
