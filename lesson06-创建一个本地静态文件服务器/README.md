@@ -16,7 +16,7 @@
 
 > 随时随地将你的当前目录变成一个静态文件服务器的根目录。
 
-而我们使用起来就是在目录下运行`anywhere`，然后就弹出一个页面，页面上将本地的所有文件夹、文件都列出来了。
+而我们使用起来就是在目录下运行`anywhere`，然后就弹出一个页面，页面上将当前目录的所有文件夹、文件都列出来了。
 
 OK，那么首先我们需要一个本地服务器。
 
@@ -121,11 +121,11 @@ var serveIndex = require('serve-index'),
 // 获取本机IP地址
 function getIpAddress() {
     var info = os.networkInterfaces();
-    var address;
+    var address, dev;
     for (dev in info) {
-        info[dev].forEach(function(i, v) {
-            if (!!i.family && i.family === 'IPv4' && !i.internal) {
-                address = i.address;
+        info[dev].forEach(function(v, i) {
+            if (!!v.family && v.family === 'IPv4' && !v.internal) {
+                address = v.address;
                 return;
             }
         });
@@ -161,7 +161,7 @@ app.use(serveIndex(process.cwd(), {"icons": true})).listen(port, function() {
 
 写到这里我们已经完成了大部分工作，剩下的我们还有一件事要做，就是让用户自定义一些选项。
 
-首先，`端口号`和`是否默认开启网页`要能够自定义，我们先加进去。
+首先，`端口号`、`是否默认开启网页`以及`服务器根目录`要能够自定义，我们先加进去。
 
 ```javascript
 var serveIndex = require('serve-index'),

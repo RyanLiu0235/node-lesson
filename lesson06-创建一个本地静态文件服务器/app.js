@@ -23,9 +23,9 @@ function getIpAddress() {
     var info = os.networkInterfaces();
     var address;
     for (dev in info) {
-        info[dev].forEach(function(i, v) {
-            if (!!i.family && i.family === 'IPv4' && !i.internal) {
-                address = i.address;
+        info[dev].forEach(function(v, i) {
+            if (!!v.family && v.family === 'IPv4' && !v.internal) {
+                address = v.address;
                 return;
             }
         });
