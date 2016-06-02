@@ -1,10 +1,10 @@
 var serveIndex = require('serve-index'),
 	serveStatic = require('serve-static'),
 	os = require('os'),
-    argv = require('minimist')(process.argv.slice(2)),
-    exec = require('child_process').exec,
-    spawn = require('child_process').spawn,
-    app = require('connect')();
+	argv = require('minimist')(process.argv.slice(2)),
+	exec = require('child_process').exec,
+	spawn = require('child_process').spawn,
+	app = require('connect')();
 
 // 获取帮助命令
 if (argv.help) {
