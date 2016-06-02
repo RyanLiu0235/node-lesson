@@ -26,12 +26,12 @@
 
 ## 目录
 
-* [第一章——操作文件](./lesson00-操作文件/)
-* [第二章——网络](./lesson00-网络/)
-* [第三章——进程管理](./lesson00-进程管理/)
-* [第四章——connect](./lesson00-connect/)
-* [第五章——利用express搭建MVC结构的应用](./lesson00-利用express搭建MVC结构的应用/)
-* [第六章——创建一个本地静态文件服务器](./lesson00-创建一个本地静态文件服务器/)
+* [第一章——操作文件](https://github.com/stop2stare/node-lesson/tree/master/lesson01-操作文件)
+* [第二章——网络](https://github.com/stop2stare/node-lesson/tree/master/lesson02-网络/)
+* [第三章——进程管理](https://github.com/stop2stare/node-lesson/tree/master/lesson03-进程管理/)
+* [第四章——connect](https://github.com/stop2stare/node-lesson/tree/master/lesson04-connect/)
+* [第五章——利用express搭建MVC结构的应用](https://github.com/stop2stare/node-lesson/tree/master/lesson05-利用express搭建MVC结构的应用/)
+* [第六章——创建一个本地静态文件服务器](https://github.com/stop2stare/node-lesson/tree/master/lesson06-创建一个本地静态文件服务器/)
 
 ## Referrence
 * [nodejs中文文档](http://nodeapi.ucdok.com/#/api/)
