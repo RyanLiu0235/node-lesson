@@ -169,10 +169,10 @@ db.collectionName.remove({"name": "ssss"}, 1) //删除结果集中的第一条
 
 安装后界面如下：
 
-![Alt text](rdb.png)
+![Alt text](./rdb.png)
 
 使用方法：
 
-![Alt text](rdb2.png)
+![Alt text](./rdb2.png)
 
 接下来就不需要敲命令行那么麻烦了，可以直接用这个工具操作数据库，它也可以执行mongoDB shell。
