@@ -192,19 +192,7 @@ npm install mongodb
 var MongoClient = require('mongodb').MongoClient; //获取mongodb
 var url = "mongodb://localhost:27017/mydb"; //连接本地数据库中的mydb这个库
 MongoClient.connect(url, function(err, db) {
-  console.log("连接成功！"); //成功， 命令行输出提示
-  var collection = db.collection('users'); //连接users这张表
-  //插入数据
-  var data = [{"name":'wilson001',"age":21},{"name":'wilson002',"age":22}];
-  //insert方法插入
-  collection.insert(data, function(err, result) { 
-    if(err)
-    {
-      console.log('Error:'+ err);
-      return;
-    }	 
-    callback(result);
-  });
+
 });
 ```
 ### Insert 方法插入数据
