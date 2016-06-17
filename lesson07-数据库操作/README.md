@@ -183,12 +183,12 @@ db.collectionName.remove({"name": "ssss"}, 1) //删除结果集中的第一条
 
 ###安装
 
-`
+```
 npm install mongodb
-`
+```
  ###连接数据库
 
- `
+ ```
 var MongoClient = require('mongodb').MongoClient; //获取mongodb
 var url = "mongodb://localhost:27017/mydb"; //连接本地数据库中的mydb这个库
 MongoClient.connect(url, function(err, db) {
@@ -206,9 +206,9 @@ MongoClient.connect(url, function(err, db) {
     callback(result);
   });
 });
- `
+```
 ### Insert 方法插入数据
-`
+```
 var MongoClient = require('mongodb').MongoClient; //获取mongodb
 var url = "mongodb://localhost:27017/mydb"; //连接本地数据库中的mydb这个库
 MongoClient.connect(url, function(err, db) {
@@ -226,10 +226,10 @@ MongoClient.connect(url, function(err, db) {
     db.close(); //关闭数据库
   });
 });
-`
+```
 
 ### Remove 方法删除数据
-`
+```
 var MongoClient = require('mongodb').MongoClient; //获取mongodb
 var url = "mongodb://localhost:27017/mydb"; //连接本地数据库中的mydb这个库
 MongoClient.connect(url, function(err, db) {
@@ -247,10 +247,10 @@ MongoClient.connect(url, function(err, db) {
     db.close(); //关闭数据库
   });
 });
-`
+```
 
 ### Update 方法修改数据
-`
+```
 var MongoClient = require('mongodb').MongoClient; //获取mongodb
 var url = "mongodb://localhost:27017/mydb"; //连接本地数据库中的mydb这个库
 MongoClient.connect(url, function(err, db) {
@@ -269,10 +269,10 @@ MongoClient.connect(url, function(err, db) {
     db.close(); //关闭数据库
   });
 });
-`
+```
 
 ### Find 方法查询数据
-`
+```
 var MongoClient = require('mongodb').MongoClient; //获取mongodb
 var url = "mongodb://localhost:27017/mydb"; //连接本地数据库中的mydb这个库
 MongoClient.connect(url, function(err, db) {
@@ -291,7 +291,7 @@ MongoClient.connect(url, function(err, db) {
     return result; //返回查找的结果集
   });
 });
-`
+```
 
 
 
