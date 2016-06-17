@@ -176,3 +176,124 @@ db.collectionName.remove({"name": "ssss"}, 1) //删除结果集中的第一条
 ![Alt text](./rdb2.png)
 
 接下来就不需要敲命令行那么麻烦了，可以直接用这个工具操作数据库，它也可以执行mongoDB shell。
+
+##NodeJs中的mongoDB
+
+虽然有mongoose这种工具，但我建议大家还是先熟悉熟悉使用node的mongoDB模块，熟悉了它的语法后，再用mongoose可以加深理解，以下讲介绍简单的nodejs对mongodb的基本操作。
+
+###安装
+
+`
+npm install mongodb
+`
+ ###连接数据库
+
+ `
+var MongoClient = require('mongodb').MongoClient; //获取mongodb
+var url = "mongodb://localhost:27017/mydb"; //连接本地数据库中的mydb这个库
+MongoClient.connect(url, function(err, db) {
+  console.log("连接成功！"); //成功， 命令行输出提示
+  var collection = db.collection('users'); //连接users这张表
+  //插入数据
+  var data = [{"name":'wilson001',"age":21},{"name":'wilson002',"age":22}];
+  //insert方法插入
+  collection.insert(data, function(err, result) { 
+    if(err)
+    {
+      console.log('Error:'+ err);
+      return;
+    }	 
+    callback(result);
+  });
+});
+ `
+### Insert 方法插入数据
+`
+var MongoClient = require('mongodb').MongoClient; //获取mongodb
+var url = "mongodb://localhost:27017/mydb"; //连接本地数据库中的mydb这个库
+MongoClient.connect(url, function(err, db) {
+  console.log("连接成功！"); //成功， 命令行输出提示
+  var collection = db.collection('users'); //连接users这张表
+  //插入数据
+  var data = [{"name":'wilson001',"age":21},{"name":'wilson002',"age":22}];
+  // insert 方法插入
+  collection.insert(data, function(err, result) { 
+    if(err)
+    {
+      console.log('Error:'+ err); //错误，命令行输出提示
+      return;
+    }
+    db.close(); //关闭数据库
+  });
+});
+`
+
+### Remove 方法删除数据
+`
+var MongoClient = require('mongodb').MongoClient; //获取mongodb
+var url = "mongodb://localhost:27017/mydb"; //连接本地数据库中的mydb这个库
+MongoClient.connect(url, function(err, db) {
+  console.log("连接成功！"); //成功， 命令行输出提示
+  var collection = db.collection('users'); //连接users这张表
+  //插入数据
+  var data = {"name":'wilson001',"age":21};
+  // remove 方法删除
+  collection.remove(data, function(err, result) { 
+    if(err)
+    {
+      console.log('Error:'+ err); //错误，命令行输出提示
+      return;
+    }
+    db.close(); //关闭数据库
+  });
+});
+`
+
+### Update 方法修改数据
+`
+var MongoClient = require('mongodb').MongoClient; //获取mongodb
+var url = "mongodb://localhost:27017/mydb"; //连接本地数据库中的mydb这个库
+MongoClient.connect(url, function(err, db) {
+  console.log("连接成功！"); //成功， 命令行输出提示
+  var collection = db.collection('users'); //连接users这张表
+  //插入数据
+  var originData = {"name":'wilson001'}; //源数据
+  var updateData = {$set: {"age" : 100}}; //要修改的数据
+  // update 方法删除
+  collection.update(originData, updateData, function(err, result) { 
+    if(err)
+    {
+      console.log('Error:'+ err); //错误，命令行输出提示
+      return;
+    }
+    db.close(); //关闭数据库
+  });
+});
+`
+
+### Find 方法查询数据
+`
+var MongoClient = require('mongodb').MongoClient; //获取mongodb
+var url = "mongodb://localhost:27017/mydb"; //连接本地数据库中的mydb这个库
+MongoClient.connect(url, function(err, db) {
+  console.log("连接成功！"); //成功， 命令行输出提示
+  var collection = db.collection('users'); //连接users这张表
+  //插入数据
+  var find = {"name":'wilson001'};
+  // remove 方法删除
+  collection.find(data, function(err, result) { 
+    if(err)
+    {
+      console.log('Error:'+ err); //错误，命令行输出提示
+      return;
+    }
+    db.close(); //关闭数据库
+    return result; //返回查找的结果集
+  });
+});
+`
+
+
+
+
+
