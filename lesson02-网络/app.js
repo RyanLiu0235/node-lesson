@@ -4,7 +4,6 @@ var server = require('http').createServer(),
 
 server.on('request', function(req, res) {
 	var _url = path.normalize('.' + req.url);
-
 	fs.exists(_url, function(exist) {
 		if (exist) {
 			fs.stat(_url, function(err, stat) {

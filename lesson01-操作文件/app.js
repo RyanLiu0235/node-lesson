@@ -11,7 +11,7 @@ var totalSize = stat.size / (Math.pow(1024, 3)); // 文件大小
 console.time('传输耗时');
 
 // 事件触发写法
-// 可读流触发'data'事件——有数据流入
+可读流触发'data'事件——有数据流入
 readStream.on('data', function(chunk) {
     if (writeStream.write(chunk) === false) {
         readStream.pause(); // 数据暂停流动
