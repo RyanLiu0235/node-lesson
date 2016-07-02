@@ -32,8 +32,10 @@
 * [第四章——connect](https://github.com/stop2stare/node-lesson/tree/master/lesson04-connect/)
 * [第五章——利用express搭建MVC结构的应用](https://github.com/stop2stare/node-lesson/tree/master/lesson05-利用express搭建MVC结构的应用/)
 * [第六章——创建一个本地静态文件服务器](https://github.com/stop2stare/node-lesson/tree/master/lesson06-创建一个本地静态文件服务器/)
+* [第七章——数据库操作](https://github.com/stop2stare/node-lesson/tree/master/lesson07-数据库操作/) [@Joejo](https://github.com/Joejo)
 
 ## Referrence
+
 * [nodejs中文文档](http://nodeapi.ucdok.com/#/api/)
 * [Alibaba - 七天学会nodejs](http://nqdeng.github.io/7-days-nodejs/)
 
