@@ -147,7 +147,7 @@ db.collectionName.insert({'usrName':"name",'productName':'iphone'})
 ```
 #### 查询一条记录
 ``` sh
-db.collectionName.find( <query filter>, <projection> )
+db.collectionName.findOne( <query filter>, <projection> )
 ```
 #### 更新一条记录
 ``` sh
@@ -195,7 +195,7 @@ MongoClient.connect(url, function(err, db) {
 
 });
 ```
-### Insert 方法插入数据
+### insert 方法插入数据
 ``` js
 var MongoClient = require('mongodb').MongoClient; //获取mongodb
 var url = "mongodb://localhost:27017/mydb"; //连接本地数据库中的mydb这个库
@@ -216,7 +216,7 @@ MongoClient.connect(url, function(err, db) {
 });
 ```
 
-### Remove 方法删除数据
+### remove 方法删除数据
 ``` js
 var MongoClient = require('mongodb').MongoClient; //获取mongodb
 var url = "mongodb://localhost:27017/mydb"; //连接本地数据库中的mydb这个库
@@ -237,7 +237,7 @@ MongoClient.connect(url, function(err, db) {
 });
 ```
 
-### Update 方法修改数据
+### update 方法修改数据
 ``` js
 var MongoClient = require('mongodb').MongoClient; //获取mongodb
 var url = "mongodb://localhost:27017/mydb"; //连接本地数据库中的mydb这个库
@@ -259,7 +259,7 @@ MongoClient.connect(url, function(err, db) {
 });
 ```
 
-### Find 方法查询数据
+### findOne 方法查询数据
 ``` js
 var MongoClient = require('mongodb').MongoClient; //获取mongodb
 var url = "mongodb://localhost:27017/mydb"; //连接本地数据库中的mydb这个库
@@ -267,9 +267,9 @@ MongoClient.connect(url, function(err, db) {
   console.log("连接成功！"); //成功， 命令行输出提示
   var collection = db.collection('users'); //连接users这张表
   //插入数据
-  var find = {"name":'wilson001'};
+  var data = {"name":'wilson001'};
   // remove 方法删除
-  collection.find(data, function(err, result) { 
+  collection.findOne(data, function(err, result) { 
     if(err)
     {
       console.log('Error:'+ err); //错误，命令行输出提示
