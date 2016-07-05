@@ -7,8 +7,25 @@ MongoDB 没有关系型数据库中行和表的概念，不过有类似的文档
 
 ## 1.Mac下安装mongoDB
 
+<<<<<<< HEAD
 ``` sh 
+=======
+如果已装brew，更新最新版
+
+```
+>>>>>>> c7113099b62b1449d593aedfb3c7fdc309675020
 brew update
+
+```
+如果未装brew，安装brew
+
+```
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+安装mongodb
+
+```
 brew install mongodb
 ```
 
@@ -133,6 +150,7 @@ getName
 ``` sh
 db.getMongo()
 ```
+<<<<<<< HEAD
 #### 新建一个collection(表)
 ``` sh
 db.createCollection(“usr”)
@@ -157,6 +175,32 @@ db.collectionName.update({"name": "ssss"})
 ``` sh
 db.collectionName.remove({"name": "ssss"})
 db.collectionName.remove({"name": "ssss"}, 1) //删除结果集中的第一条
+=======
+####新建一个表(user)
+```
+db.createCollection('user')
+```
+####删除一个表(user)
+```
+db.user.drop()
+```
+####在user表里插入一条记录
+```
+db.user.insert({'userName':"name",'productName':'iphone'})
+```
+####在user表里查询一条记录
+```
+db.user.find( <query filter>, <projection> )
+```
+####在user表里更新一条记录
+```
+db.user.update({"name": "ssss"})
+```
+####在user表里删除一条记录
+```
+db.user.remove({"name": "ssss"})
+db.user.remove({"name": "ssss"}, 1) //删除结果集中的第一条
+>>>>>>> c7113099b62b1449d593aedfb3c7fdc309675020
 ```
 
 更多命令行方法，https://docs.mongodb.com/manual/tutorial/remove-documents/
