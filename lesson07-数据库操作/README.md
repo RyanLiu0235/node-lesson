@@ -15,7 +15,6 @@ brew install mongodb
 
 ```
 brew update
-
 ```
 如果未装brew，安装brew
 
@@ -147,56 +146,81 @@ getName
 ```
 
 #### 查看数据库所在host
+
 ``` sh
 db.getMongo()
 ```
+
 #### 新建一个collection(表)
+
 ``` sh
 db.createCollection(“usr”)
 ```
+
 #### 删除一张collection
+
 ```sh
 db.collection.drop()
 ```
+
 ####插入一条记录
+
 ```sh
 db.collectionName.insert({'usrName':"name",'productName':'iphone'})
 ```
+
 #### 查询一条记录
+
 ``` sh
 db.collectionName.findOne( <query filter>, <projection> )
 ```
+
 #### 更新一条记录
+
 ``` sh
 db.collectionName.update({"name": "ssss"})
 ```
+
 #### 删除一条记录
+
 ``` sh
 db.collectionName.remove({"name": "ssss"})
 db.collectionName.remove({"name": "ssss"}, 1) //删除结果集中的第一条
+```
 
 #### 新建一个表(user)
-```
+
+``` sh
 db.createCollection('user')
 ```
+
 #### 删除一个表(user)
-```
+
+``` sh
 db.user.drop()
 ```
+
 #### 在user表里插入一条记录
-```
+
+``` sh
 db.user.insert({'userName':"name",'productName':'iphone'})
 ```
+
 #### 在user表里查询一条记录
-```
+
+``` sh
 db.user.find( <query filter>, <projection> )
 ```
+
 #### 在user表里更新一条记录
-```
+
+``` sh
 db.user.update({"name": "ssss"})
 ```
+
 #### 在user表里删除一条记录
-```
+
+``` sh
 db.user.remove({"name": "ssss"})
 db.user.remove({"name": "ssss"}, 1) //删除结果集中的第一条
 ```
