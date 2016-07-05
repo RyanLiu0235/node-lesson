@@ -7,8 +7,21 @@ MongoDB 没有关系型数据库中行和表的概念，不过有类似的文档
 
 ##1.Mac下安装mongoDB
 
+如果已装brew，更新最新版
+
 ```
 brew update
+
+```
+如果未装brew，安装brew
+
+```
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+安装mongodb
+
+```
 brew install mongodb
 ```
 
@@ -133,30 +146,30 @@ getName
 ```
 db.getMongo()
 ```
-####新建一个collection(表)
+####新建一个表(user)
 ```
-db.createCollection(“usr”)
+db.createCollection('user')
 ```
-####删除一张collection
+####删除一个表(user)
 ```
-db.collection.drop()
+db.user.drop()
 ```
-####插入一条记录
+####在user表里插入一条记录
 ```
-db.collectionName.insert({'usrName':"name",'productName':'iphone'})
+db.user.insert({'userName':"name",'productName':'iphone'})
 ```
-####查询一条记录
+####在user表里查询一条记录
 ```
-db.collectionName.find( <query filter>, <projection> )
+db.user.find( <query filter>, <projection> )
 ```
-####更新一条记录
+####在user表里更新一条记录
 ```
-db.collectionName.update({"name": "ssss"})
+db.user.update({"name": "ssss"})
 ```
-####删除一条记录
+####在user表里删除一条记录
 ```
-db.collectionName.remove({"name": "ssss"})
-db.collectionName.remove({"name": "ssss"}, 1) //删除结果集中的第一条
+db.user.remove({"name": "ssss"})
+db.user.remove({"name": "ssss"}, 1) //删除结果集中的第一条
 ```
 
 更多命令行方法，https://docs.mongodb.com/manual/tutorial/remove-documents/
