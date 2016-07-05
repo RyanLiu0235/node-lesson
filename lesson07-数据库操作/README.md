@@ -7,10 +7,6 @@ MongoDB 没有关系型数据库中行和表的概念，不过有类似的文档
 
 ## 1.Mac下安装mongoDB
 
-``` sh 
-brew install mongodb
-```
-
 如果已装brew，更新最新版
 
 ```
@@ -82,7 +78,7 @@ mongo
 ```
 然后就可以直接使用各种命令来操作db了。
 
-### 4.1
+### 4.1 新建数据库
 
 新建一个数据库：
 
@@ -131,7 +127,7 @@ db.auth("admin", '111111')
 
 ## CRUD 增删改查
 
-### collection(表)相关
+### collection(集合)相关
 
 ``` sh
 use dbName
@@ -151,74 +147,37 @@ getName
 db.getMongo()
 ```
 
-#### 新建一个collection(表)
-
-``` sh
-db.createCollection(“usr”)
-```
-
-#### 删除一张collection
-
-```sh
-db.collection.drop()
-```
-
-####插入一条记录
-
-```sh
-db.collectionName.insert({'usrName':"name",'productName':'iphone'})
-```
-
-#### 查询一条记录
-
-``` sh
-db.collectionName.findOne( <query filter>, <projection> )
-```
-
-#### 更新一条记录
-
-``` sh
-db.collectionName.update({"name": "ssss"})
-```
-
-#### 删除一条记录
-
-``` sh
-db.collectionName.remove({"name": "ssss"})
-db.collectionName.remove({"name": "ssss"}, 1) //删除结果集中的第一条
-```
-
-#### 新建一个表(user)
+#### 新建一个集合(user)
 
 ``` sh
 db.createCollection('user')
 ```
 
-#### 删除一个表(user)
+#### 删除一个集合(user)
 
 ``` sh
 db.user.drop()
 ```
 
-#### 在user表里插入一条记录
+#### 在user集合里插入一条记录
 
 ``` sh
 db.user.insert({'userName':"name",'productName':'iphone'})
 ```
 
-#### 在user表里查询一条记录
+#### 在user集合里查询一条记录
 
 ``` sh
 db.user.find( <query filter>, <projection> )
 ```
 
-#### 在user表里更新一条记录
+#### 在user集合里更新一条记录
 
 ``` sh
 db.user.update({"name": "ssss"})
 ```
 
-#### 在user表里删除一条记录
+#### 在user集合里删除一条记录
 
 ``` sh
 db.user.remove({"name": "ssss"})
